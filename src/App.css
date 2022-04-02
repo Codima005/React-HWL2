@@ -1,0 +1,25 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    height: 100px;
+    font-size: 40px;
+    margin: 5px;
+    display: block;
+}
+
+.content {
+    height: 100px;
+    display: block;
+    font-size: 40px;
+    margin: 5px;
+}
+
+.complete {
+    background-color: chartreuse;
+}
+
+.inProgress {
+    background-color: cornflowerblue;
+}
