@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { ToDoItem } from "./ToDoItem";
+import { TodoItem } from "./ToDoItem";
 
-export class ToDoList extends Component {
+export class TodoList extends Component {
   state = {
-    ToDos: [
+    toDos: [
       {
         id: "14",
         title: "Сделать утреннюю зарядку",
@@ -34,16 +34,24 @@ export class ToDoList extends Component {
 
   constructor() {
     super();
-    this.DeleteButton = this.DeleteButton.bind(this);
+    this.onDeleteButton = this.onDeleteButton.bind(this);
   }
 
-  DeleteButton = (id) => {
+  onDeleteButton = (id) => {
     this.setState({
-      ToDos: this.state.ToDos.filter((item) => item.id !== id),
+      toDos: this.state.toDos.filter((item) => item.id !== id),
     });
   };
 
   render() {
-    return <ToDoItem info={this.state.ToDos} but={this.DeleteButton} />;
+
+    return (
+      <>
+        {this.state.toDos.map((toDo) =>
+          <TodoItem key={toDo.id} info={toDo} but={this.onDeleteButton} />
+        )}
+      </>);
+
   }
+
 }

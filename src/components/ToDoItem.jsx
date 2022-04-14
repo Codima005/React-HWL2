@@ -1,39 +1,38 @@
 import React, { Component } from "react";
 
-export class ToDoItem extends Component {
+export class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.color = this.color.bind(this);
   }
 
   color = (change) => {
-    let ToDoClass;
+    let toDoClass;
     if (change) {
-      ToDoClass = "complete";
+      toDoClass = "complete";
     } else {
-      ToDoClass = "inProgress";
+      toDoClass = "inProgress";
     }
 
-    return ToDoClass;
+    return toDoClass;
   };
 
   render() {
-    const info = this.props.info;
-    const DelateBut = this.props.but;
+    const { id, title, completed } = this.props.info;
+    const onDelateBut = this.props.but;
 
     return (
-      <>
-        <div className="content">
-          <ul>
-            {info.map((el) => (
-              <div key={el.id}>
-                <li className={this.color(el.completed)}>{el.title}</li>
-                <button onClick={() => DelateBut(el.id)}>DONE</button>
-              </div>
-            ))}
-          </ul>
-        </div>
-      </>
+
+      <div className="content">
+        <ul>
+
+
+          <li className={this.color(completed)}>{title}</li>
+          <button onClick={() => onDelateBut(id)}>DONE</button>
+
+
+        </ul>
+      </div>
     );
   }
 }

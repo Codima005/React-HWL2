@@ -1,5 +1,5 @@
 import "./App.css";
-import { ToDoList } from "./components/ToDoList";
+import { TodoList } from "./components/ToDoList";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <h1>TO DO LIST</h1>
       </header>
       
-    <ToDoList />
+    <TodoList />
   
    </div>
   );
